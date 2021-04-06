@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.mindbody.countrylistapp.ui.countryinfo.CountryListFragment"
+        android:label="@string/country_list" >
+        <action
+            android:id="@+id/showDetails"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.mindbody.countrylistapp.ui.countryinfo.ProvinceFragment"
+        android:label="Province" >
+        <argument
+            android:name="countryModel"
+            app:argType="com.mindbody.countrylistapp.model.Country"/>
+    </fragment>
+</navigation>
